@@ -14,13 +14,13 @@ const path = require("path");
 const rutaproject = path.resolve(__dirname) + "/..";
 const rutaabsoluta = path.resolve(__dirname);
 
-console.log(proceso);
+
 
 fs.readFile( rutaproject  + "/snip/component",  "utf8", (err, fd)=>{
          let indata = fd;
          let outdata = indata.replace(/component/g, proceso[2]);
          console.log(outdata);
-        fs.writeFile( "./src/components/" + proceso[2] + ".js", outdata, (err)=>{
+        fs.writeFile( "./src/components/" + proceso + ".js", outdata, (err)=>{
             if (err) throw err;
             console.log('está guardado');
         })
