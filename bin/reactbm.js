@@ -1,17 +1,16 @@
 #!/usr/bin/env node
-
-
-
-const readline = require('readline');
 const fs = require('fs');
 const exec = require('child_process').exec;
 
+if(!process.argv[2]) process.exit();
+
 function capitalize(cadena){
-  return cadena[0].toLocaleUpperCase + cadena.slice(1);
+  return cadena[0].toUpperCase() + cadena.slice(1);
 }
 
-const path = require("path");
 const proceso = capitalize(process.argv[2]);
+
+const path = require("path");
 const rutaproject = path.resolve(__dirname) + "/..";
 const rutaabsoluta = path.resolve(__dirname);
 
@@ -26,7 +25,6 @@ fs.readFile( rutaproject  + "/snip/component",  "utf8", (err, fd)=>{
             console.log('está guardado');
         })
 })
-
 
 
 /*
