@@ -18,7 +18,7 @@ const rutaabsoluta = path.resolve(__dirname);
 
 fs.readFile( rutaproject  + "/snip/component",  "utf8", (err, fd)=>{
          let indata = fd;
-         let outdata = indata.replace(/component/g, proceso[2]);
+         let outdata = indata.replace(/component/g, proceso);
          console.log(outdata);
         fs.writeFile( "./src/components/" + proceso + ".js", outdata, (err)=>{
             if (err) throw err;
